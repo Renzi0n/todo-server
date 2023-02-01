@@ -42,10 +42,9 @@ const router = jsonServer.router(dbJsonPath);
 const middlewares = jsonServer.defaults();
 
 server.use(middlewares);
-// Add this before server.use(router)
-server.use(router);
 
 server.post('/tasks', (req, res) => {
+  console.log(req.body);
   res.status(200).jsonp(req.body);
 })
 
@@ -53,6 +52,9 @@ server.post('/tasks', (req, res) => {
 server.listen(3000, () => {
  console.log("JSON Server is running");
 });
+
+// Add this before server.use(router)
+server.use(router);
 
 // Export the Server API
 module.exports = server;
