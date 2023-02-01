@@ -18,7 +18,7 @@
     "url": "https://github.com/Renzi0n/todo-server/issues"
   },
   "homepage": "https://github.com/Renzi0n/todo-server#readme",
-  "devDependencies": {
+  "dependencies": {
     "json-server": "^0.17.1"
   }
 }
