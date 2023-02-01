@@ -1,0 +1,24 @@
+{
+  "name": "todo-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "NODE_ENV=development node server.js",
+    "start": "NODE_ENV=production node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Renzi0n/todo-server.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Renzi0n/todo-server/issues"
+  },
+  "homepage": "https://github.com/Renzi0n/todo-server#readme",
+  "devDependencies": {
+    "json-server": "^0.17.1"
+  }
+}
