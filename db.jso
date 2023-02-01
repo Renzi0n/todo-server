@@ -18,11 +18,8 @@
       "name": "Wash",
       "info": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
       "isImportant": false,
-      "id": 3
-    },
-    {
-      "random": "Wash",
-      "id": 4
+      "id": 3,
+      "isCompleted": false
     }
   ]
 }
