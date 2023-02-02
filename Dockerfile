@@ -4,8 +4,8 @@ WORKDIR /
 
 COPY package.json ./
 RUN npm install
-COPY db.json ./db.json
 COPY server.js ./server.js
+COPY public ./public
 
 EXPOSE 3000
 
