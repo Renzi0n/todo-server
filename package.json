@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/Renzi0n/todo-server#readme",
   "dependencies": {
+    "express": "^4.18.2",
     "json-server": "^0.17.1"
   }
 }

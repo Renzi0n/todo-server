@@ -1,0 +1,294 @@
+{
+  "openapi" : "3.0.0",
+  "info" : {
+    "title" : "TODO-SERVER",
+    "description" : "Test server for liga intership",
+    "version" : "0.1"
+  },
+  "servers" : [ {
+    "url" : "http://ovz1.j50031265.px7zm.vps.myjino.ru"
+  } ],
+  "paths" : {
+    "/tasks/{taskId}" : {
+      "get" : {
+        "description" : "Get task by taskId",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "taskId",
+          "required" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Task",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "object",
+                  "properties" : {
+                    "name" : {
+                      "type" : "string",
+                      "description" : "task name."
+                    },
+                    "info" : {
+                      "type" : "string",
+                      "description" : "task description."
+                    },
+                    "isImportant" : {
+                      "type" : "boolean",
+                      "description" : "Task importance"
+                    },
+                    "isCompleted" : {
+                      "type" : "boolean",
+                      "description" : "Task completance"
+                    },
+                    "id" : {
+                      "type" : "integer",
+                      "description" : "task id."
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "patch" : {
+        "description" : "Update task by taskId",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "taskId",
+          "required" : true
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "type" : "object",
+                "properties" : {
+                  "isImportant" : {
+                    "type" : "boolean"
+                  },
+                  "name" : {
+                    "type" : "string"
+                  },
+                  "info" : {
+                    "type" : "string"
+                  },
+                  "isCompleted" : {
+                    "type" : "boolean"
+                  }
+                }
+              },
+              "examples" : {
+                "0" : {
+                  "value" : "{\n        \"name\": \"washing23\",\n        \"info\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit\",\n        \"isImportant\": false,\n        \"isCompleted\": true\n}"
+                }
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Task",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "object",
+                  "properties" : {
+                    "name" : {
+                      "type" : "string",
+                      "description" : "task name."
+                    },
+                    "info" : {
+                      "type" : "string",
+                      "description" : "task description."
+                    },
+                    "isImportant" : {
+                      "type" : "boolean",
+                      "description" : "Task importance"
+                    },
+                    "isCompleted" : {
+                      "type" : "boolean",
+                      "description" : "Task completance"
+                    },
+                    "id" : {
+                      "type" : "integer",
+                      "description" : "task id."
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "servers" : [ {
+          "url" : "http://ovz1.j50031265.px7zm.vps.myjino.ru"
+        } ]
+      },
+      "delete" : {
+        "description" : "Delete task",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "taskId",
+          "required" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Auto generated using Swagger Inspector",
+            "content" : {
+              "application/json; charset=utf-8" : {
+                "schema" : {
+                  "type" : "string"
+                },
+                "examples" : { }
+              }
+            }
+          }
+        },
+        "servers" : [ {
+          "url" : "http://ovz1.j50031265.px7zm.vps.myjino.ru"
+        } ]
+      },
+      "servers" : [ {
+        "url" : "http://ovz1.j50031265.px7zm.vps.myjino.ru"
+      } ]
+    },
+    "/tasks" : {
+      "get" : {
+        "description" : "Get all tasks",
+        "parameters" : [ {
+          "name" : "isImportant",
+          "in" : "query",
+          "schema" : {
+            "type" : "boolean"
+          }
+        }, {
+          "name" : "name_like",
+          "in" : "query",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "isCompleted",
+          "in" : "query",
+          "schema" : {
+            "type" : "boolean"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Task",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "array",
+                  "items" : {
+                    "oneOf" : [ {
+                      "type" : "object",
+                      "properties" : {
+                        "name" : {
+                          "type" : "string",
+                          "description" : "task name."
+                        },
+                        "info" : {
+                          "type" : "string",
+                          "description" : "task description."
+                        },
+                        "isImportant" : {
+                          "type" : "boolean",
+                          "description" : "Task importance"
+                        },
+                        "isCompleted" : {
+                          "type" : "boolean",
+                          "description" : "Task completance"
+                        },
+                        "id" : {
+                          "type" : "integer",
+                          "description" : "task id."
+                        }
+                      }
+                    } ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "servers" : [ {
+          "url" : "http://ovz1.j50031265.px7zm.vps.myjino.ru"
+        } ]
+      },
+      "post" : {
+        "description" : "Create task",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "type" : "object",
+                "properties" : {
+                  "isImportant" : {
+                    "type" : "boolean"
+                  },
+                  "name" : {
+                    "type" : "string"
+                  },
+                  "info" : {
+                    "type" : "string"
+                  }
+                }
+              },
+              "examples" : {
+                "0" : {
+                  "value" : "{\n        \"name\": \"washing2\",\n        \"info\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit\",\n        \"isImportant\": false\n}"
+                }
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Task",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "object",
+                  "properties" : {
+                    "name" : {
+                      "type" : "string",
+                      "description" : "task name."
+                    },
+                    "info" : {
+                      "type" : "string",
+                      "description" : "task description."
+                    },
+                    "isImportant" : {
+                      "type" : "boolean",
+                      "description" : "Task importance"
+                    },
+                    "isCompleted" : {
+                      "type" : "boolean",
+                      "description" : "Task completance"
+                    },
+                    "id" : {
+                      "type" : "integer",
+                      "description" : "task id."
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "servers" : [ {
+          "url" : "http://ovz1.j50031265.px7zm.vps.myjino.ru"
+        } ]
+      },
+      "servers" : [ {
+        "url" : "http://ovz1.j50031265.px7zm.vps.myjino.ru"
+      } ]
+    }
+  },
+  "components" : {
+    "schemas" : null
+  }
+}
