@@ -1,0 +1,25 @@
+{
+    "tasks": [
+      {
+        "id": 1,
+        "name": "Wash",
+        "info": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+        "isImportant": false,
+        "isCompleted": false
+      },
+      {
+        "id": 2,
+        "name": "123",
+        "info": "222",
+        "isImportant": true,
+        "isCompleted": false
+      },
+      {
+        "name": "Wash",
+        "info": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+        "isImportant": false,
+        "id": 3,
+        "isCompleted": false
+      }
+    ]
+}
